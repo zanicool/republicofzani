@@ -4,7 +4,7 @@ import Image from "next/image";
 import { ReactNode } from "react";
 
 export const metadata = {
-  title: "Empire of Zani",
+  title: "republic of Zani",
   description: "The official site of the Empire of Zani",
 };
 
@@ -24,7 +24,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
               <Box sx={{ display: 'flex', alignItems: 'center' }}>
                 <Image src="/roz-logo.jpg" alt="ROZ Logo" width={40} height={40} style={{ marginRight: 8 }} />
                 <Typography variant="h4" sx={{ fontWeight: 900, letterSpacing: 2, color: "#e50000" }}>
-                  EMPIRE OF ZANI
+                  REPUBLIC OF ZANI
                 </Typography>
               </Box>
             </Stack>
