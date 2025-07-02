@@ -38,15 +38,15 @@ export default function Home() {
 
       {/* ROZ MARK 1 Keyboard Info */}
       <Grid container spacing={6} alignItems="center" justifyContent="center" sx={{ maxWidth: 1100, mx: "auto", background: "#181824", borderRadius: 4, boxShadow: "0 4px 32px #e50000a0", p: { xs: 2, md: 6 }, mb: 8 }}>
-        <Grid item xs={12} md={5} sx={{ display: "flex", justifyContent: "center" }}>
+        <Grid size={{ xs: 12, md: 5 }} sx={{ display: "flex", justifyContent: "center" }}>{}
           <CardMedia
             component="img"
-            image="/coming.jpg"
+            image="/coming.png"
             alt="ROZ MARK 1"
             sx={{ width: 220, height: 220, objectFit: "contain", background: "#e50000", borderRadius: 3, p: 2, boxShadow: "0 2px 16px #e50000a0" }}
           />
         </Grid>
-        <Grid item xs={12} md={7}>
+        <Grid size={{ xs: 12, md: 7 }}>
           <Card sx={{ background: "transparent", boxShadow: "none", color: "#fff" }}>
             <CardContent>
               <Typography variant="h3" sx={{ fontWeight: 900, color: "#e50000", mb: 1, letterSpacing: 1 }}>

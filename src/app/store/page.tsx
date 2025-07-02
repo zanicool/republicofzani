@@ -33,7 +33,7 @@ export default function Store() {
       </Typography>
       <Grid container spacing={6} justifyContent="center">
         {products.map((product) => (
-          <Grid key={product.id} item xs={12} sm={6} md={4} display="flex" justifyContent="center">
+          <Grid key={product.id} size={{ xs: 12, sm: 6, md: 4 }} sx={{ display: 'flex', justifyContent: 'center' }}>
             <Card sx={{ width: 340, p: 3, display: 'flex', flexDirection: 'column', alignItems: 'center', minHeight: 420, background: 'linear-gradient(135deg, #181824 60%, #2d0036 100%)', color: '#fff', borderRadius: 4, boxShadow: '0 8px 32px 0 rgba(0,0,0,0.45)', border: '1px solid #e50000', }}>
               <CardMedia
                 component="img"
