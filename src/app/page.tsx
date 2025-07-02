@@ -1,72 +1,75 @@
 "use client";
-import { Grid, Card, CardContent, CardMedia, Typography, Chip, Box } from "@mui/material";
+import { Box, Typography, Button, Stack, Grid, Card, CardContent, CardMedia, Chip } from "@mui/material";
+import Link from "next/link";
 
-const products = [
-  {
-    id: 1,
-    name: "Zani T-shirt",
-    tagline: "Exclusief comfort, binnenkort beschikbaar.",
-    image: "/vercel.svg",
-    price: 29.99,
-  },
-  {
-    id: 2,
-    name: "Zani Hoodie",
-    tagline: "Warmte en stijl, binnenkort bij Zani.",
-    image: "/globe.svg",
-    price: 49.99,
-  },
-  {
-    id: 3,
-    name: "Zani Cap",
-    tagline: "Maak je look af. Coming soon.",
-    image: "/window.svg",
-    price: 19.99,
-  },
-];
-
-export default function ProductList() {
+export default function Home() {
   return (
-    <Box sx={{
-      minHeight: '100vh',
-      background: 'linear-gradient(120deg, #0a0a0a 60%, #2d0036 100%)',
-      py: 8,
-      px: { xs: 2, md: 8 },
-    }}>
-      <Typography
-        variant="h2"
-        align="center"
-        sx={{
-          color: '#fff',
-          fontWeight: 900,
-          letterSpacing: 2,
-          mb: 6,
-          textShadow: '0 4px 32px #ff0051a0',
-        }}
-      >
-        Zani Collectie
-      </Typography>
-      <Grid container spacing={6} justifyContent="center">
-        {products.map((product) => (
-          <Grid key={product.id} size={{ xs: 12, sm: 8, md: 4 }} display="flex" justifyContent="center">
-            <Card sx={{ width: 360, p: 3, display: 'flex', flexDirection: 'column', alignItems: 'center', minHeight: 420, background: 'linear-gradient(135deg, #181824 60%, #2d0036 100%)', color: '#fff', borderRadius: 4, boxShadow: '0 8px 32px 0 rgba(0,0,0,0.45)', border: '1px solid #2d0036', }}>
-              <CardMedia
-                component="img"
-                image={product.image}
-                alt={product.name}
-                sx={{ width: 180, height: 180, objectFit: 'contain', mb: 3, filter: 'drop-shadow(0 0 24px #a600ff88)' }}
-              />
-              <CardContent sx={{ textAlign: 'center' }}>
-                <Typography variant="h4" sx={{ fontWeight: 800, mb: 1, letterSpacing: 1 }}>{product.name}</Typography>
-                <Typography variant="subtitle1" sx={{ color: '#ffb3e6', fontWeight: 500, mb: 2, fontSize: 18 }}>{product.tagline}</Typography>
-                <Typography variant="h6" sx={{ color: '#ff0051', fontWeight: 700, mb: 1 }}>
-                  € {product.price.toFixed(2)}
-                </Typography>
-                <Chip label="Coming Soon" sx={{ background: 'linear-gradient(90deg, #ff0051 0%, #a600ff 100%)', color: '#fff', fontWeight: 700, fontSize: 16, borderRadius: 8, boxShadow: '0 2px 8px 0 #ff0051a0', mt: 2, letterSpacing: 1.2 }} />
-              </CardContent>
-            </Card>
-          </Grid>
-        ))}
+    <Box>
+      {/* Hero */}
+      <Box sx={{
+        minHeight: "60vh",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        background: "linear-gradient(120deg, #0a0a0a 60%, #2d0036 100%)",
+        borderRadius: 6,
+        boxShadow: "0 8px 32px 0 rgba(229,0,0,0.25)",
+        mt: 8,
+        mb: 8,
+        px: 2,
+      }}>
+        <img src="/roz-logo.jpg" alt="Republic of Zani logo" style={{ width: 120, marginBottom: 24 }} />
+        <Typography variant="h2" sx={{ color: "#fff", fontWeight: 900, letterSpacing: 2, mb: 2, textShadow: "0 4px 32px #e50000a0" }}>
+          Republic of Zani
+        </Typography>
+        <Typography variant="h5" sx={{ color: "#e50000", fontWeight: 700, mb: 4, textAlign: "center" }}>
+          Premium Keyboards & Gear for Gamers and Creators
+        </Typography>
+        <Stack direction={{ xs: "column", sm: "row" }} spacing={3}>
+          <Button component={Link} href="/store" size="large" variant="contained" sx={{ background: "linear-gradient(90deg, #e50000 0%, #a600ff 100%)", color: "#fff", fontWeight: 800, fontSize: 20, px: 5, py: 2, borderRadius: 3, boxShadow: "0 2px 16px #e50000a0", letterSpacing: 1.2 }}>
+            Shop Keyboards
+          </Button>
+          <Button component={Link} href="/about" size="large" variant="outlined" sx={{ color: "#fff", borderColor: "#e50000", fontWeight: 700, fontSize: 20, px: 5, py: 2, borderRadius: 3, '&:hover': { background: "#e50000", color: "#fff" } }}>
+            About Us
+          </Button>
+        </Stack>
+      </Box>
+
+      {/* ROZ MARK 1 Keyboard Info */}
+      <Grid container spacing={6} alignItems="center" justifyContent="center" sx={{ maxWidth: 1100, mx: "auto", background: "#181824", borderRadius: 4, boxShadow: "0 4px 32px #e50000a0", p: { xs: 2, md: 6 }, mb: 8 }}>
+        <Grid item xs={12} md={5} sx={{ display: "flex", justifyContent: "center" }}>
+          <CardMedia
+            component="img"
+            image="/coming.jpg"
+            alt="ROZ MARK 1"
+            sx={{ width: 220, height: 220, objectFit: "contain", background: "#e50000", borderRadius: 3, p: 2, boxShadow: "0 2px 16px #e50000a0" }}
+          />
+        </Grid>
+        <Grid item xs={12} md={7}>
+          <Card sx={{ background: "transparent", boxShadow: "none", color: "#fff" }}>
+            <CardContent>
+              <Typography variant="h3" sx={{ fontWeight: 900, color: "#e50000", mb: 1, letterSpacing: 1 }}>
+                ROZ MARK 1
+              </Typography>
+              <Typography variant="h6" sx={{ color: "#fff", fontWeight: 700, mb: 2 }}>
+                Hall Effect Keyboard – Rapid Trigger, Snappy, Ultra Low Response Time
+              </Typography>
+              <Stack direction="row" spacing={2} mb={2} flexWrap="wrap">
+                <Chip label="Hall Effect" sx={{ background: "#e50000", color: "#000", fontWeight: 700, fontSize: 16, borderRadius: 2 }} />
+                <Chip label="Rapid Trigger" sx={{ background: "#e50000", color: "#000", fontWeight: 700, fontSize: 16, borderRadius: 2 }} />
+                <Chip label="Snappy" sx={{ background: "#e50000", color: "#000", fontWeight: 700, fontSize: 16, borderRadius: 2 }} />
+                <Chip label="Ultra Low Response Time" sx={{ background: "#e50000", color: "#000", fontWeight: 700, fontSize: 16, borderRadius: 2 }} />
+              </Stack>
+              <Typography variant="h5" sx={{ color: "#e50000", fontWeight: 800, mb: 2 }}>
+                Binnenkort beschikbaar
+              </Typography>
+              <Button variant="contained" size="large" sx={{ background: "linear-gradient(90deg, #e50000 0%, #a600ff 100%)", color: "#fff", fontWeight: 800, fontSize: 18, px: 5, py: 1.5, borderRadius: 2, boxShadow: "0 2px 8px 0 #e50000a0", letterSpacing: 1.1 }}>
+                Blijf op de hoogte
+              </Button>
+            </CardContent>
+          </Card>
+        </Grid>
       </Grid>
     </Box>
   );
