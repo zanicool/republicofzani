@@ -21,7 +21,7 @@ jobs:
         run: npm ci
 
       - name: Build project
-        run: npm run build
+        run: npm run ci:build
 
       - name: Publish to Cloudflare Workers
         uses: cloudflare/wrangler-action@v3
