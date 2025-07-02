@@ -1,6 +1,5 @@
 "use client";
 import { Grid, Card, CardContent, CardMedia, Typography, Chip, Box } from "@mui/material";
-import { styled } from "@mui/material/styles";
 
 const products = [
   {
@@ -8,46 +7,23 @@ const products = [
     name: "Zani T-shirt",
     tagline: "Exclusief comfort, binnenkort beschikbaar.",
     image: "/vercel.svg",
+    price: 29.99,
   },
   {
     id: 2,
     name: "Zani Hoodie",
     tagline: "Warmte en stijl, binnenkort bij Zani.",
     image: "/globe.svg",
+    price: 49.99,
   },
   {
     id: 3,
     name: "Zani Cap",
     tagline: "Maak je look af. Coming soon.",
     image: "/window.svg",
+    price: 19.99,
   },
 ];
-
-const StyledCard = styled(Card)(({ theme }) => ({
-  background: "linear-gradient(135deg, #181824 60%, #2d0036 100%)",
-  color: "#fff",
-  borderRadius: 24,
-  boxShadow: "0 8px 32px 0 rgba(0,0,0,0.45)",
-  border: "1px solid #2d0036",
-  transition: "transform 0.2s cubic-bezier(.4,2,.6,1)",
-  '&:hover': {
-    transform: 'scale(1.03)',
-    boxShadow: '0 12px 40px 0 #ff0051a0',
-    borderColor: '#ff0051',
-  },
-}));
-
-const StyledChip = styled(Chip)({
-  background: 'linear-gradient(90deg, #ff0051 0%, #a600ff 100%)',
-  color: '#fff',
-  fontWeight: 700,
-  fontSize: 16,
-  padding: '0 12px',
-  borderRadius: 8,
-  boxShadow: '0 2px 8px 0 #ff0051a0',
-  marginTop: 16,
-  letterSpacing: 1.2,
-});
 
 export default function ProductList() {
   return (
@@ -73,7 +49,7 @@ export default function ProductList() {
       <Grid container spacing={6} justifyContent="center">
         {products.map((product) => (
           <Grid key={product.id} size={{ xs: 12, sm: 8, md: 4 }} display="flex" justifyContent="center">
-            <StyledCard sx={{ width: 360, p: 3, display: 'flex', flexDirection: 'column', alignItems: 'center', minHeight: 420 }}>
+            <Card sx={{ width: 360, p: 3, display: 'flex', flexDirection: 'column', alignItems: 'center', minHeight: 420, background: 'linear-gradient(135deg, #181824 60%, #2d0036 100%)', color: '#fff', borderRadius: 4, boxShadow: '0 8px 32px 0 rgba(0,0,0,0.45)', border: '1px solid #2d0036', }}>
               <CardMedia
                 component="img"
                 image={product.image}
@@ -83,9 +59,12 @@ export default function ProductList() {
               <CardContent sx={{ textAlign: 'center' }}>
                 <Typography variant="h4" sx={{ fontWeight: 800, mb: 1, letterSpacing: 1 }}>{product.name}</Typography>
                 <Typography variant="subtitle1" sx={{ color: '#ffb3e6', fontWeight: 500, mb: 2, fontSize: 18 }}>{product.tagline}</Typography>
-                <StyledChip label="Coming Soon" />
+                <Typography variant="h6" sx={{ color: '#ff0051', fontWeight: 700, mb: 1 }}>
+                  € {product.price.toFixed(2)}
+                </Typography>
+                <Chip label="Coming Soon" sx={{ background: 'linear-gradient(90deg, #ff0051 0%, #a600ff 100%)', color: '#fff', fontWeight: 700, fontSize: 16, borderRadius: 8, boxShadow: '0 2px 8px 0 #ff0051a0', mt: 2, letterSpacing: 1.2 }} />
               </CardContent>
-            </StyledCard>
+            </Card>
           </Grid>
         ))}
       </Grid>
