@@ -4,24 +4,10 @@ import { Grid, Card, CardContent, CardMedia, Typography, Button, Box } from "@mu
 const products = [
   {
     id: 1,
-    name: "Zani Pro Mechanical Keyboard",
-    tagline: "RGB, Hot-Swap, Ultra-Responsive.",
-    image: "/keyboard1.png",
+    name: "ROZ MARK 1",
+    tagline: "D",
+    image: "/coming.jpg",
     price: 149.99,
-  },
-  {
-    id: 2,
-    name: "Zani Compact 60%",
-    tagline: "Minimalistisch, krachtig, portable.",
-    image: "/keyboard2.png",
-    price: 119.99,
-  },
-  {
-    id: 3,
-    name: "Zani Wireless RGB",
-    tagline: "Draadloos, kleurrijk, ultiem comfort.",
-    image: "/keyboard3.png",
-    price: 179.99,
   },
 ];
 
@@ -43,7 +29,7 @@ export default function Store() {
               />
               <CardContent sx={{ textAlign: 'center' }}>
                 <Typography variant="h5" sx={{ fontWeight: 800, mb: 1, letterSpacing: 1 }}>{product.name}</Typography>
-                <Typography variant="subtitle1" sx={{ color: '#ffb3e6', fontWeight: 500, mb: 2, fontSize: 16 }}>{product.tagline}</Typography>
+                <Typography variant="subtitle1" sx={{ color: '#ffb3e6', fontWeight: 500, mb: 2, fontSize: 16, mt: 6 }}>{product.tagline}</Typography>
                 <Typography variant="h6" sx={{ color: '#e50000', fontWeight: 700, mb: 2 }}>
                   € {product.price.toFixed(2)}
                 </Typography>
