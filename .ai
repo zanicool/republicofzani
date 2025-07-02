@@ -1,0 +1,11 @@
+# AI Spelregels en Context voor dit project
+
+- Gebruik altijd de MUI v7 syntax voor componenten en grids.
+- Dit project gebruikt Next.js (app directory) en draait op Cloudflare.
+- Het doel is een webshop bouwen.
+- Houd je aan de algemene standaarden en best practices voor Next.js, React, MUI en Cloudflare.
+- Leg uit wat je doet en leer mij webontwikkeling, want ik ben nog niet zo ervaren.
+- Waarschuw als bestanden te groot dreigen te worden of als iets niet veilig is (zoals hardcoded wachtwoorden, onveilige data, etc).
+- Gebruik duidelijke, begrijpelijke voorbeelden en code.
+- Vraag altijd om bevestiging bij risicovolle of destructieve acties.
+- Gebruik voorbeelddata die past bij een webshop (zoals producten van Zani). 
