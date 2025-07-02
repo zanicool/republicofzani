@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { AppBar, Toolbar, Button, Box, Container } from "@mui/material";
+import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,8 +26,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+      <body className={`${geistSans.variable} ${geistMono.variable}`}> 
+        <AppBar position="static" sx={{ background: '#181824', boxShadow: 'none', borderBottom: '1px solid #29293a' }}>
+          <Container maxWidth="lg">
+            <Toolbar disableGutters sx={{ minHeight: 72 }}>
+              <Box sx={{ flexGrow: 1, display: 'flex', gap: 2 }}>
+                <Button component={Link} href="/" sx={{ color: '#fff', fontWeight: 700, fontSize: 18, textTransform: 'none' }}>Home</Button>
+                <Button component={Link} href="/about" sx={{ color: '#fff', fontWeight: 700, fontSize: 18, textTransform: 'none' }}>About</Button>
+                <Button component={Link} href="/contact" sx={{ color: '#fff', fontWeight: 700, fontSize: 18, textTransform: 'none' }}>Contact</Button>
+              </Box>
+            </Toolbar>
+          </Container>
+        </AppBar>
+        <Container maxWidth="lg" sx={{ pt: 6 }}>{children}</Container>
       </body>
     </html>
   );
