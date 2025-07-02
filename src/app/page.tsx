@@ -41,7 +41,7 @@ export default function Home() {
         <Grid size={{ xs: 12, md: 5 }} sx={{ display: "flex", justifyContent: "center" }}>{}
           <CardMedia
             component="img"
-            image="/coming.png"
+            image="/coming.jpg"
             alt="ROZ MARK 1"
             sx={{ width: 220, height: 220, objectFit: "contain", background: "#e50000", borderRadius: 3, p: 2, boxShadow: "0 2px 16px #e50000a0" }}
           />
