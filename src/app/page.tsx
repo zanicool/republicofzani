@@ -55,7 +55,15 @@ export default function Home() {
               <Typography variant="h6" sx={{ color: "#fff", fontWeight: 700, mb: 2 }}>
                 Hall Effect Keyboard – Rapid Trigger, Snappy, Ultra Low Response Time
               </Typography>
-              <Stack direction="row" spacing={2} mb={2} flexWrap="wrap">
+              <Stack
+                direction="row"
+                spacing={0}
+                mb={2}
+                flexWrap="wrap"
+                sx={{
+                  gap: '16px 16px'
+                }}
+              >
                 <Chip label="Hall Effect" sx={{ background: "#e50000", color: "#000", fontWeight: 700, fontSize: 16, borderRadius: 2 }} />
                 <Chip label="Rapid Trigger" sx={{ background: "#e50000", color: "#000", fontWeight: 700, fontSize: 16, borderRadius: 2 }} />
                 <Chip label="Snappy" sx={{ background: "#e50000", color: "#000", fontWeight: 700, fontSize: 16, borderRadius: 2 }} />
